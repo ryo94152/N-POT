@@ -1,0 +1,52 @@
+.top-wrapper{
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.top-menu-title{
+  color:navy;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.top-menu-content{
+  display: flex;
+  justify-content: center;
+}
+
+.content-list{
+  padding: 20px 0;
+}
+
+.content-list{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-list-title{
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.top-menu-button{
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  color:white;
+  background-color: #ccc;
+  margin: 10px auto;
+  border: 1px solid black;
+}
+
+.master-menu-list{
+  display: flex;
+  justify-content: space-between
+}

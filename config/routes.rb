@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'stocks#index'
+  root 'top#index'
   resources :stocks do
     collection do
       get 'zaiko'
@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :deliveries
   resources :customers
+  resources :top, only: [:index]
 end
