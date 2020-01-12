@@ -1,0 +1,62 @@
+.stock_title 在庫情報一覧
+%table.stock-table-show
+  %tr
+    %th 入庫年
+    %th 入庫月
+    %th 入庫日
+    %th 畜種
+    %th 部位
+    %th 規格
+    %th ロット
+    %th 数量/箱
+    %th 重量/Kg
+    %th
+    %tr
+      - last_lot = nil
+      - last_box = 0
+      - last_weight = 0
+      - @stocks.each do |stock|
+        %tr
+          - if stock.lot != last_lot && Stock.where(status:1).where(lot:stock.lot).count == stock.box
+            %td= stock.stock_year
+            %td= stock.stock_month
+            %td= stock.stock_day
+            %td= stock.category.parent.parent.genre
+            %td= stock.category.parent.genre
+            %td= stock.category.genre
+            %td= stock.lot
+            %td= stock.box + last_box
+            %td= stock.weight + last_weight
+            %td.td-edit=  link_to '詳細', stock_path(stock.id)
+            - last_lot = nil
+            - last_box = 0
+            - last_weight = 0
+          - elsif stock.lot != last_lot && Stock.where(status:1).where(lot:stock.lot).count != stock.box + last_box
+            - last_lot = stock.lot
+            - last_box += stock.box
+            - last_weight += stock.weight
+          - elsif stock.lot == last_lot && Stock.where(status:1).where(lot:stock.lot).count != stock.box + last_box
+            - last_lot = stock.lot
+            - last_box += stock.box
+            - last_weight += stock.weight
+          - elsif stock.lot == last_lot && Stock.where(status:1).where(lot:stock.lot).count == stock.box + last_box
+            %td= stock.stock_year
+            %td= stock.stock_month
+            %td= stock.stock_day
+            %td= stock.category.parent.parent.genre
+            %td= stock.category.parent.genre
+            %td= stock.category.genre
+            %td= stock.lot
+            %td= stock.box + last_box
+            %td= stock.weight + last_weight
+            %td.td-edit= link_to '詳細', stock_path(stock.id)
+            - last_lot = nil
+            - last_box = 0
+            - last_weight = 0
+          - else
+            - last_lot = nil
+            - last_box = 0
+            - last_weight = 0
+.stock-button
+  = link_to root_path, class: "stock-edit-button" do
+    .stock-button-edit-font 戻る

@@ -1,0 +1,29 @@
+.stock_title 販売情報一覧
+%table.stock-table-show
+  %tr
+    %th 販売年
+    %th 販売月
+    %th 販売日
+    %th 販売先コード
+    %th 販売先名
+    %th 店舗名
+    %th ロット
+    %th 単価
+    %th 
+    %tr
+      - @deliveries.each do |delivery|
+        %tr
+          %td= delivery.han_year
+          %td= delivery.han_month
+          %td= delivery.han_day
+          %td= Customer.where(id:delivery.customer_id).count
+          %td= Customer.where(id:delivery.customer_id).count
+          %td= Customer.where(id:delivery.customer_id).count
+          %td= Stock.where(id:delivery.stock_id).count
+          %td= delivery.price
+          %td.td-edit= link_to "編集", root_path
+.stock-button
+  = link_to new_delivery_path, class: "stock-edit-button" do
+    .stock-button-edit-font 新規登録
+  = link_to root_path, class: "stock-edit-button" do
+    .stock-button-edit-font 戻る

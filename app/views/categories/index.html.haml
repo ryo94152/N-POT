@@ -1,0 +1,17 @@
+.stock_title 商品マスタ一覧
+%table.stock-table-show
+  %tr
+    %th コード
+    %th 畜種
+    %th 部位
+    %th 規格
+    %tr
+      - @parents.each do |parent|
+        %tr
+          %td= parent.id
+          %td= parent.parent.parent.genre
+          %td= parent.parent.genre
+          %td= parent.genre
+.stock-button
+  = link_to root_path, class: "stock-edit-button" do
+    .stock-button-edit-font 戻る

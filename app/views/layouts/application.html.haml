@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title N-POT
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+  .container
+    %header.header
+      .top_left
+        = link_to root_path, class: "title-space" do
+          .title N-POT
+          .sub-title - 在庫管理システム -
+      .top_right
+        = link_to root_path, class: "" do
+          .login ログイン
+        = link_to root_path, class: "" do
+          .setting 新規登録
+    .content
+      .side
+        = render "./layouts/side"
+      .main
+        .main_flame
+          = yield
+    %footer.footer footer

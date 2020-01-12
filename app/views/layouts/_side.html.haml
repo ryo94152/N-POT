@@ -1,0 +1,26 @@
+.side_menus
+  .side_top
+    MENU
+  .side_menu_title &#x30E1;&#x30A4;&#x30F3;&#x30E1;&#x30CB;&#x30E5;&#x30FC;
+  .side_menu
+    \&#x25B6;&#xFE0E;#{link_to '入庫データ入力', '/stocks/new'}
+  .side_menu
+    \&#x25B6;&#xFE0E;#{link_to '入庫データ照会', '/stocks'}
+  .side_menu
+    = link_to new_delivery_path do
+      ▶出庫データ入力
+  .side_menu
+    = link_to deliveries_path do
+      ▶出庫データ照会
+  .side_menu
+    = link_to zaiko_stocks_path do
+      ▶在庫データ照会
+  .side_menu_title マスタ一覧
+  .side_menu
+    = link_to categories_path do
+      ▶商品マスタ
+  .side_menu
+    = link_to customers_path do
+      ▶販売先マスタ
+
+-# .side_menu= link_to '▶︎販売先マスタ', '/customers'

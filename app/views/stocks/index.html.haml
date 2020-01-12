@@ -1,0 +1,39 @@
+.stock_title 入庫情報一覧
+%table.stock-table-show
+  %tr
+    %th 入庫年
+    %th 入庫月
+    %th 入庫日
+    %th 畜種
+    %th 部位
+    %th 規格
+    %th ロット
+    %th 数量/箱
+    %th 重量/Kg
+    %th 状態
+    %th
+    %tr
+      - @stocks.each do |stock|
+        %tr
+          %td= stock.stock_year
+          %td= stock.stock_month
+          %td= stock.stock_day
+          %td= stock.category.parent.parent.genre
+          %td= stock.category.parent.genre
+          %td= stock.category.genre
+          %td= stock.lot
+          %td= stock.box
+          %td= stock.weight
+          %td
+            - if stock.status == 1
+              在庫
+            - elsif stock.status == 2
+              仮出庫
+            - elsif stock.status == 3
+              .status-three 出庫済
+            - else
+              該当なし
+          %td.td-edit= link_to '詳細', stock_path(stock.id)
+.stock-button
+  = link_to root_path, class: "stock-edit-button" do
+    .stock-button-edit-font 戻る

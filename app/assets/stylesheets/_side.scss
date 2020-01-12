@@ -1,0 +1,47 @@
+.side {
+  display: flex;
+  position: webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 200px;
+  height: 800px;
+  color:gray;
+  border:2px solid #ccc;
+  .side_top{
+    height: 30px;
+    line-height: 30px;
+    color: navy;
+    font-size: 12px;
+    text-align: center;
+    border:2px solid navy;
+    border-radius: 20px;
+    margin: 10px 45px;
+  }
+}
+
+
+
+.side_menus{
+  width: 100%;
+}
+
+.side_menu{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  padding: 0 20px; 
+}
+
+.side_menu:hover{
+  background-color:#ccc;
+  color:white;
+}
+
+.side_menu_title{
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  padding: 0 5px; 
+  color:black;
+}

@@ -1,0 +1,31 @@
+.stock_title 出庫情報入力
+= form_for @delivery, method: :post do |f|
+  %table.stock-table
+    %tr
+      %th
+        = f.label :han_year, "販売年"
+      %th
+        = f.label :han_month, "販売月"
+      %th
+        = f.label :han_day, "販売日"
+      %th 
+        = f.label :price, "販売先コード"
+      %th 
+        = f.label :price, "在庫情報"
+      %th 
+        = f.label :price, "単価"
+    %tr
+      %td.form-stock
+        = f.select :han_year,[["2020", "2020"],["2019", "2019"], ["2018", "2018"]]
+      %td.form-stock
+        = f.select :han_month,[["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"],["6", "6"], ["7", "7"],  ["8", "8"], ["9", "9"],["10", "10"], ["11", "11"],["12", "12"]]
+      %td.form-stock
+        = f.select :han_day,[["1", "1"],["2", "2"],["3", "3"], ["4", "4"],["5", "5"],["6", "6"], ["7", "7"],  ["8", "8"], ["9", "9"],["10", "10"],["11", "11"],["12", "12"],["13", "13"], ["14", "14"],["15", "15"],["16", "16"], ["17", "17"],  ["18", "18"], ["19", "19"],["20", "20"],["21", "21"],["22", "22"],["23", "23"], ["24", "24"],["25", "25"],["26", "26"], ["27", "27"],  ["28", "28"], ["29", "29"],["30", "30"], ["31", "31"]]
+      %td.form-stock
+        = f.collection_select :customer_id, @customers, :id, :ten_and_han_name
+      %td.form-stock
+        = f.collection_select :stock_id, @stocks, :id, :lot_and_weight
+      %td.form-stock
+        = f.text_field :price, placeholder: "未確定時は0で入力",class:"stock-text-field"
+  .stock-button
+    = f.submit "登録" ,class: "stock-finish"
