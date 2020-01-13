@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  skip_before_action:logged_in_user,only:[:index]
 
   def index
     @customers = Customer.all.order("han_code ASC").order("ten_code ASC")
