@@ -20,19 +20,18 @@
 
 .content-list{
   padding: 20px 0;
+  p{
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+  }
 }
 
 .content-list{
   width: 30%;
   display: flex;
   flex-direction: column;
-}
-
-.content-list-title{
-  height: 30px;
-  line-height: 30px;
-  font-weight: bold;
-  margin: 0 auto;
 }
 
 .top-menu-button{
