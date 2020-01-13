@@ -70,3 +70,9 @@ Things you may want to cover:
 |ancestry|string|| <!-- 畜種、部位、規格 -->
 ### Association
 - has_many :stocks
+
+## usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: true|
+|encrypted_password|string|null: faise|
