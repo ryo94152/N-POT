@@ -15,10 +15,14 @@
           .title N-POT
           .sub-title - 在庫管理システム -
       .top_right
-        = link_to root_path, class: "" do
-          .login ログイン
-        = link_to root_path, class: "" do
-          .setting 新規登録
+        - if user_signed_in?
+          = link_to destroy_user_session_path, method: :delete, class: "" do
+            .top-right-button ログアウト
+        - else
+          = link_to new_user_session_path, class: "" do
+            .top-right-button ログイン
+          = link_to new_user_registration_path, class: "" do
+            .top-right-button 新規登録
     .content
       .side
         = render "./layouts/side"

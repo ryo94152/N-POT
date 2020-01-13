@@ -2,35 +2,39 @@
   .top-menu-title MENU
   .top-menu-content
     .content-list
-      .content-list-title 入庫管理
+      %p 入庫管理
       = link_to new_stock_path, class: "" do
         .top-menu-button 入庫データ入力
       = link_to stocks_path, class: "" do
         .top-menu-button 入庫データ参照
     .content-list
-      .content-list-title 出庫管理
+      %p 出庫管理
       = link_to new_delivery_path, class: "" do
         .top-menu-button 出庫データ入力
       = link_to deliveries_path, class: "" do
         .top-menu-button 出庫データ参照
     .content-list
-      .content-list-title 在庫管理
+      %p 在庫管理
       = link_to zaiko_stocks_path, class: "" do
         .top-menu-button 在庫データ参照
   .top-menu-content
     .content-list
-      .content-list-title マスタ
+      %p マスタ
       = link_to categories_path, class: "" do
         .top-menu-button 商品マスタ
       = link_to customers_path, class: "" do
         .top-menu-button 販売先マスタ
     .content-list
-      .content-list-title 管理
-      = link_to root_path, class: "" do
-        .top-menu-button ログイン
-      = link_to root_path, class: "" do
-        .top-menu-button 新規登録
+      %p 管理
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class: "" do
+          .top-menu-button ログアウト
+      - else
+        = link_to new_user_session_path, class: "" do
+          .top-menu-button ログイン
+        = link_to new_user_registration_path, class: "" do
+          .top-menu-button 新規登録
     .content-list
-      .content-list-title その他
+      %p その他
       = link_to root_path, class: "" do
         .top-menu-button 更新情報
