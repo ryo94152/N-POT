@@ -1,5 +1,16 @@
 class StocksController < ApplicationController
-  # before_action :set_stock, only: [:edit, :show]
+  before_action :logged_in_user
+  skip_before_action:logged_in_user,only:[:index,:zaiko]
+
+  def logged_in_user
+        unless logged_in?
+          redirect_to new_user_session_path
+        end
+  end
+  
+  def logged_in?
+      !current_user.nil?
+  end
 
   def index
     @stocks = Stock.all
