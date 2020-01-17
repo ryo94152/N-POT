@@ -1,29 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# N-POT 在庫管理アプリ
+# 在庫管理アプリ
  
 在庫管理ができるアプリケーションです。
  
@@ -31,6 +6,10 @@ Things you may want to cover:
  
 在庫管理ができるアプリケーションです。
 
+## 今後実装したいところ
+
+- CSVファイルの読み書き
+- 在庫の検索機能
  
 ***DEMO:***
  
@@ -44,38 +23,20 @@ Things you may want to cover:
  
 For more information, see `awesome-tool --help`.
  
-## Requirement
+## 開発環境
  
-- Requirement
-- Requirement
-- Requirement
+- Ruby
+- Ruby on Rails
+- MySQL
+- VSCode
  
-## Usage
+## 使い方
  
 1. Usage
 2. Usage
 3. Usage
- 
-## Installation
- 
-```
-$ git clone https://github.com/TomoakiTANAKA/awesome-tool
-$ cd awesome-tool
-$ sh setup.sh
-$ ~do anything~
-```
- 
-## Test
- 
-1. test
-2. test
-3. test
- 
-## Deploy
- 
-1. deploy
-2. deploy
-3. deploy
+
+![ER図](https://user-images.githubusercontent.com/57342731/72622159-ff9af380-3985-11ea-86d7-0eb4c6b3d18d.png)
  
 ## Anything Else
  
@@ -92,14 +53,14 @@ mail to: xxxx@mail.com
  
 [MIT](http://TomoakiTANAKA.mit-license.org)</blockquote>
 
-## stocksテーブル
+<!-- ## stocksテーブル
 |column|Type|Options|
 |------|----|-------|
 |lot|string|null: false|
 |box|integer|null: false|
 |weight|decimal|null: false|
 |status|string|null: false|
-|category_id|references|foreign_key: true|
+|category_id|d|foreign_key: true|
 ### Association
 - belongs_to :category
 - has_one :delivery
@@ -135,7 +96,7 @@ mail to: xxxx@mail.com
 |------|----|-------|
 |code|string||
 |genre|string||
-|ancestry|string|| <!-- 畜種、部位、規格 -->
+|ancestry|string||
 ### Association
 - has_many :stocks
 
@@ -143,4 +104,4 @@ mail to: xxxx@mail.com
 |column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
-|encrypted_password|string|null: faise|
+|encrypted_password|string|null: faise| -->
