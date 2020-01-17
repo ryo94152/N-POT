@@ -21,7 +21,15 @@
     %td= @stock.lot
     %td= @stock.box
     %td= @stock.weight
-    %td= @stock.status
+    %td
+      - if @stock.status == 1
+        在庫
+      - elsif @stock.status == 2
+        仮出庫
+      - elsif @stock.status == 3
+        .status-three 出庫済
+      - else
+        該当なし
 .stock-button
   = link_to edit_stock_path(@stock.id), class: "stock-edit-button" do
     .stock-button-edit-font 編集
