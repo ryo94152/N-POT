@@ -15,10 +15,10 @@
 ## 使い方
 
 1. ユーザー登録、またはログインをします。<br>
-- ログインしてない状態では参照はできますが登録、編集、削除は行えません。
+- ログインしてない状態では各情報の参照はできますが登録、編集、削除は行えません。
 ![新規登録画面](https://user-images.githubusercontent.com/57342731/72661103-cad87c00-3a19-11ea-9f27-1afbf6326576.png)
 2. カテゴリと販売先のマスタを設定します。
-![出庫情報登録画面]](https://user-images.githubusercontent.com/57342731/72661118-ee032b80-3a19-11ea-9b3a-d799ec100baa.png)
+![出庫情報登録画面](https://user-images.githubusercontent.com/57342731/72661118-ee032b80-3a19-11ea-9b3a-d799ec100baa.png)
 3. 入庫情報を入力します。
 ![販売先登録画面](https://user-images.githubusercontent.com/57342731/72661112-e2b00000-3a19-11ea-8c7a-ee77ad929ed8.png)
 4. 出庫情報を入力します。
