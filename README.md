@@ -1,6 +1,6 @@
 # 在庫管理アプリ
 
-![TOPページ](https://user-images.githubusercontent.com/57342731/72660992-b051d300-3a18-11ea-8ef9-b339300a013c.png)
+![TOPページ](https://user-images.githubusercontent.com/57342731/72681991-3f8be300-3b0c-11ea-8d02-9cc2412e213e.png)
  
 ## このアプリについて
  
