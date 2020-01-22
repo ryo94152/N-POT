@@ -14,7 +14,6 @@ class StocksController < ApplicationController
 
   def index
     @stocks = Stock.all
-    # @purchase = Purchase.where(lot:'B09008').sum(:weight)
     @parents = Category.all
     @parents.each do |category| #取得したカテゴリーでループ
       category.children.each do |childCategory| #子カテゴリーでループ
@@ -30,7 +29,6 @@ class StocksController < ApplicationController
   end
 
   def create
-    # binding.pry
     @stock = Stock.new(save_params)
     if @stock.save
       redirect_to new_stock_path
