@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: n-pot_production
-  username: n-pot
-  password: <%= ENV['N-POT_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
