@@ -10,7 +10,7 @@
     %th ロット
     %th 数量/箱
     %th 重量/Kg
-    %th
+    -# %th
     %tr
       - last_lot = nil
       - last_box = 0
@@ -27,7 +27,7 @@
             %td= stock.lot
             %td= stock.box + last_box
             %td= stock.weight + last_weight
-            %td.td-edit=  link_to '詳細', stock_path(stock.id)
+            -# %td.td-edit=  link_to '詳細', stock_path(stock.id)
             - last_lot = nil
             - last_box = 0
             - last_weight = 0
@@ -49,7 +49,7 @@
             %td= stock.lot
             %td= stock.box + last_box
             %td= stock.weight + last_weight
-            %td.td-edit= link_to '詳細', stock_path(stock.id)
+            -# %td.td-edit= link_to '詳細', stock_path(stock.id)
             - last_lot = nil
             - last_box = 0
             - last_weight = 0
