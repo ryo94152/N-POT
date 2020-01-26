@@ -15,7 +15,9 @@
           .title N-POT
           .sub-title - 在庫管理アプリ -
       .top-center
-        #{current_user.email}さんでログインしています
+        - if user_signed_in?
+          #{current_user.email}さんでログインしています
+        - else
       .top_right
         - if user_signed_in?
           = link_to destroy_user_session_path, method: :delete, class: "" do

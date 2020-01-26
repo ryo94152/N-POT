@@ -20,6 +20,6 @@
       %td.form-stock
         = f.text_field :ten_name, placeholder: "※任意",class:"stock-text-field"
   .stock-button
-    = f.submit "登録" ,class: "stock-finish"
+    = f.submit "変更" ,class: "stock-finish"
     = link_to customer_path, method: :delete,class: "stock-delete-button" do
       .stock-button-delete-font 削除
